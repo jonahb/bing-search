@@ -14,6 +14,10 @@ gem install bing-search
 
 Sign up for the [Bing Search API](https://datamarket.azure.com/dataset/bing/search) or the [Web-Only Bing Search API](https://datamarket.azure.com/dataset/bing/searchweb) at the Microsoft Azure Marketplace. Then retrieve your Account Key from the [My Account](https://datamarket.azure.com/account) section of the marketplace and provide it as shown below.
 
+### Documentation
+
+This README provides an overview of bing-search. Full documentation is available at [rubydoc.info](http://www.rubydoc.info/gems/bing-search).
+
 ## Basics
 
 To use bing-search, first supply your Account Key:
