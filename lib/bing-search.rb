@@ -80,7 +80,7 @@ module BingSearch
     end
     alias_method :spelling, :spelling_suggestions
 
-    # Convenience method that creates a {Client} and searches multiple sources
+    # Convenience method that creates a {Client} and searches multiple sources.
     # Takes the same arguments as {Client#related_search}. Set {access_key} before
     # calling.
     # @return (see Client#composite)
