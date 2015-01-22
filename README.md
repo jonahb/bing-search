@@ -119,7 +119,7 @@ All of the single-type search options are supported in composite searches, thoug
 BingSearch.composite 'Fermi', [:image, :video], image_filters: [:small], video_filters: [:short]
 ```
 
-Composite searches also give you access more data about the search including the total number of results in the Bing index and whether Bing corrected apparent errors in the query text:
+Composite searches also give you access to more data about the search including the total number of results in the Bing index and whether Bing corrected apparent errors in the query text:
 
 ```ruby
 result = BingSearch.composite('Feyman', [:web, :image, :news])
