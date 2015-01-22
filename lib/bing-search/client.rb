@@ -113,7 +113,7 @@ module BingSearch
     #   @param [String] query
     #     The query text; supports the
     #     {http://msdn.microsoft.com/en-us/library/ff795667.aspx Bing Query Language}
-    #   @param [Hash<Symbol => Object>] opts
+    #   @param [Hash{Symbol => Object}] opts
     #   @option opts [Integer] :limit
     #     The maximum number of results to return
     #   @option opts [Integer] :offset
@@ -335,15 +335,15 @@ module BingSearch
     #   e.g. 'Web'
     # @param [String] query
     #   The query text
-    # @param [Hash<Symbol => Object>] opts
+    # @param [Hash{Symbol => Object}] opts
     #   The options hash provided by the caller
     # @param [Array<Symbol>] passthrough_opts
     #   Keys of the options to copy to the params hash
-    # @param [Hash<Symbol => Module>] enum_opt_to_module
+    # @param [Hash{Symbol => Module}] enum_opt_to_module
     #   Maps an enum option key to the module containing the enum's values.
     #   Used to translate symbols to enum values. E.g. maps +:web_file_type+
     #   to {FileType}.
-    # @param [Hash<Symbol => Object>] params
+    # @param [Hash{Symbol => Object}] params
     #   Parameters for the invocation
     # @return [Object]
     # @raise [ServiceError]
@@ -429,8 +429,8 @@ module BingSearch
       raise ArgumentError, "#{module_} does not contain a constant corresponding to #{symbol}"
     end
 
-    # @param [Hash<Symbol => Object>] params
-    # @return [Hash<String => Object]
+    # @param [Hash{Symbol => Object}] params
+    # @return [Hash{String => Object}]
     #
     def replace_param_names(params, replacements)
       params.each_with_object(Hash.new) do |(key, value), hash|
