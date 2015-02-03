@@ -30,7 +30,7 @@ class ClientTest < MiniTest::Test
   end
 
   def test_web_only_client_raises_with_non_web_source
-    client = BingSearch::Client.new(web_only: true)
+    client = BingSearch::Client.new(account_key: account_key, web_only: true)
     assert_raises(BingSearch::ServiceError) { client.image QUERY }
   end
 
