@@ -1,4 +1,4 @@
-require_relative 'setup'
+require 'setup'
 
 class ClientTest < MiniTest::Test
   include AccountKeySetup

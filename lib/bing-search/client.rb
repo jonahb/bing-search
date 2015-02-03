@@ -4,9 +4,6 @@ require 'net/http'
 require 'uri'
 require 'active_support/core_ext/hash/slice'
 require 'active_support/core_ext/string/inflections'
-require_relative 'errors'
-require_relative 'models'
-require_relative 'enums'
 
 module BingSearch
   class Client

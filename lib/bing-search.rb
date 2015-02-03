@@ -1,11 +1,11 @@
 %w{
-  client
   enums
+  client
   errors
   models
   version
 }.each do |file|
-  require File.expand_path("../bing-search/#{file}", __FILE__)
+  require "bing-search/#{file}"
 end
 
 module BingSearch
