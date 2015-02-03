@@ -1,4 +1,4 @@
-require 'setup'
+require 'test_helper'
 
 class BingSearchTest < MiniTest::Test
   include AccountKeySetup

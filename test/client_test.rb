@@ -1,4 +1,4 @@
-require 'setup'
+require 'test_helper'
 
 class ClientTest < MiniTest::Test
   include AccountKeySetup
