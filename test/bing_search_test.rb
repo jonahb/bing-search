@@ -1,7 +1,7 @@
 require_relative 'setup'
 
 class BingSearchTest < MiniTest::Test
-  include AccessKeySetup
+  include AccountKeySetup
 
   QUERY = 'cat'
 

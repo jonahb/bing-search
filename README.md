@@ -154,7 +154,7 @@ end
 Or to override global settings:
 
 ```ruby
-client = BingSearch::Client.new(access_key: 'hzy9+Y6...', web_only: true)
+client = BingSearch::Client.new(account_key: 'hzy9+Y6...', web_only: true)
 ```
 
 ## Tests
@@ -162,7 +162,7 @@ client = BingSearch::Client.new(access_key: 'hzy9+Y6...', web_only: true)
 To run the tests:
 
 1. Sign up for both the standard and web-only APIs
-2. Set the environment variable BING\_SEARCH\_ACCESS\_KEY to your Access Key
+2. Set the environment variable BING\_SEARCH\_ACCOUNT\_KEY to your Account Key
 3. `rake`
 
 ## Contributing

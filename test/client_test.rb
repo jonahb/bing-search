@@ -1,7 +1,7 @@
 require_relative 'setup'
 
 class ClientTest < MiniTest::Test
-  include AccessKeySetup
+  include AccountKeySetup
 
   QUERY = 'cat'
 
@@ -9,23 +9,23 @@ class ClientTest < MiniTest::Test
 
   def setup
     super
-    @client = BingSearch::Client.new(access_key: access_key)
+    @client = BingSearch::Client.new(account_key: account_key)
   end
 
-  def test_initialize_uses_access_key_if_provided
-    access_key = 'hello'
-    client = BingSearch::Client.new(access_key: access_key)
-    assert_equal access_key, client.access_key
+  def test_initialize_uses_account_key_if_provided
+    account_key = 'hello'
+    client = BingSearch::Client.new(account_key: account_key)
+    assert_equal account_key, client.account_key
   end
 
-  def test_initialize_uses_static_access_key_if_access_key_not_provided
-    BingSearch.access_key = access_key
+  def test_initialize_uses_static_account_key_if_account_key_not_provided
+    BingSearch.account_key = account_key
     client = BingSearch::Client.new
-    assert_equal access_key, client.access_key
+    assert_equal account_key, client.account_key
   end
 
   def test_web_only_client_returns_web_results
-    client = BingSearch::Client.new(access_key: access_key, web_only: true)
+    client = BingSearch::Client.new(account_key: account_key, web_only: true)
     client.web QUERY
   end
 
@@ -52,7 +52,7 @@ class ClientTest < MiniTest::Test
   end
 
   def test_class_open
-    client = BingSearch::Client.open(access_key: access_key) do |client|
+    client = BingSearch::Client.open(account_key: account_key) do |client|
       assert client.open?
       client.web QUERY
     end

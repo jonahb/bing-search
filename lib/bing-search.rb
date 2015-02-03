@@ -13,17 +13,17 @@ module BingSearch
   HIGHLIGHT_DELIMITER = "\u{e001}"
 
   class << self
-    # An Access Key obtained from the Azure Marketplace. You can set this
-    # attribute once instead of instantiating each {Client} with an Access Key.
+    # An Account Key obtained from the Azure Marketplace. You can set this
+    # attribute once instead of instantiating each {Client} with an Account Key.
     # @return [String]
-    attr_accessor :access_key
+    attr_accessor :account_key
 
     # Whether to use the less expensive web-only API
     # @return [Boolean]
     attr_accessor :web_only
 
     # Convenience method that creates a {Client} and searches for web pages.
-    # Takes the same arguments as {Client#web}. Set {access_key} before calling.
+    # Takes the same arguments as {Client#web}. Set {account_key} before calling.
     # @return (see Client#web)
     # @see Client#web
     #
@@ -32,7 +32,7 @@ module BingSearch
     end
 
     # Convenience method that creates a {Client} and searches for images. Takes
-    # the same arguments as {Client#image}. Set {access_key} before calling.
+    # the same arguments as {Client#image}. Set {account_key} before calling.
     # @return (see Client#image)
     # @see Client#image
     #
@@ -41,7 +41,7 @@ module BingSearch
     end
 
     # Convenience method that creates a {Client} and searches for videos. Takes
-    # the same arguments as {Client#video}. Set {access_key} before calling.
+    # the same arguments as {Client#video}. Set {account_key} before calling.
     # @return (see Client#video)
     # @see Client#video
     #
@@ -50,7 +50,7 @@ module BingSearch
     end
 
     # Convenience method that creates a {Client} and searches for news. Takes
-    # the same arguments as {Client#news}. Set {access_key} before calling.
+    # the same arguments as {Client#news}. Set {account_key} before calling.
     # @return (see Client#news)
     # @see Client#news
     #
@@ -59,7 +59,7 @@ module BingSearch
     end
 
     # Convenience method that creates a {Client} and searches for related
-    # queries. Takes the same arguments as {Client#related_search}. Set {access_key}
+    # queries. Takes the same arguments as {Client#related_search}. Set {account_key}
     # before calling.
     # @return (see Client#related_search)
     # @see Client#related_search
@@ -71,7 +71,7 @@ module BingSearch
 
     # Convenience method that creates a {Client} and corrects spelling in the
     # query text. Takes the same arguments as {Client#related_search}. Set
-    # {access_key} before calling.
+    # {account_key} before calling.
     # @return (see Client#spelling_suggestions)
     # @see Client#spelling_suggestions
     #
@@ -81,7 +81,7 @@ module BingSearch
     alias_method :spelling, :spelling_suggestions
 
     # Convenience method that creates a {Client} and searches multiple sources.
-    # Takes the same arguments as {Client#related_search}. Set {access_key} before
+    # Takes the same arguments as {Client#related_search}. Set {account_key} before
     # calling.
     # @return (see Client#composite)
     # @see Client#composite

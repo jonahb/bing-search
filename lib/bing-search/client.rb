@@ -10,9 +10,9 @@ require_relative 'enums'
 
 module BingSearch
   class Client
-    # The Access Key obtained from the Azure Marketplace
+    # The Account Key obtained from the Azure Marketplace
     # @return [String]
-    attr_reader :access_key
+    attr_reader :account_key
 
     # Whether to use the less expensive web-only API
     # @return [Boolean]
@@ -21,19 +21,19 @@ module BingSearch
 
     # @!group Constructors
 
-    # @param [String, nil] access_key
-    #   An Access Key obtained from the Azure Marketplace. If nil,
-    #   {BingSearch.access_key} is assumed.
+    # @param [String, nil] account_key
+    #   An Account Key obtained from the Azure Marketplace. If nil,
+    #   {BingSearch.account_key} is assumed.
     # @param [Boolean, nil] web_only
     #   Whether to use the less expensive web-only API. If nil,
     #   {BingSearch.web_only} is assumed.
     #
-    def initialize(access_key: nil, web_only: nil)
-      @access_key = access_key || BingSearch.access_key
+    def initialize(account_key: nil, web_only: nil)
+      @account_key = account_key || BingSearch.account_key
       @web_only = web_only.nil? ? BingSearch.web_only : web_only
 
-      unless @access_key
-        raise ArgumentError, "Pass an Access Key or set BingSearch.access_key"
+      unless @account_key
+        raise ArgumentError, "Pass an Account Key or set BingSearch.account_key"
       end
     end
 
@@ -373,7 +373,7 @@ module BingSearch
 
       response = in_session do |session|
         request = Net::HTTP::Get.new("#{base_path}/#{operation}?#{query}")
-        request.basic_auth(access_key, access_key)
+        request.basic_auth(account_key, account_key)
         session.request request
       end
 
