@@ -1,15 +1,13 @@
 require 'test_helper'
 
 class ClientTest < MiniTest::Test
-  include AccountKeySetup
-
   QUERY = 'cat'
 
   attr_reader :client
 
   def setup
     super
-    @client = BingSearch::Client.new(account_key: account_key)
+    @client = BingSearch::Client.new(account_key: ACCOUNT_KEY)
   end
 
   def test_initialize_uses_account_key_if_provided
@@ -19,18 +17,18 @@ class ClientTest < MiniTest::Test
   end
 
   def test_initialize_uses_static_account_key_if_account_key_not_provided
-    BingSearch.account_key = account_key
+    BingSearch.account_key = ACCOUNT_KEY
     client = BingSearch::Client.new
-    assert_equal account_key, client.account_key
+    assert_equal ACCOUNT_KEY, client.account_key
   end
 
   def test_web_only_client_returns_web_results
-    client = BingSearch::Client.new(account_key: account_key, web_only: true)
+    client = BingSearch::Client.new(account_key: ACCOUNT_KEY, web_only: true)
     client.web QUERY
   end
 
   def test_web_only_client_raises_with_non_web_source
-    client = BingSearch::Client.new(account_key: account_key, web_only: true)
+    client = BingSearch::Client.new(account_key: ACCOUNT_KEY, web_only: true)
     assert_raises(BingSearch::ServiceError) { client.image QUERY }
   end
 
@@ -52,7 +50,7 @@ class ClientTest < MiniTest::Test
   end
 
   def test_class_open
-    client = BingSearch::Client.open(account_key: account_key) do |c|
+    client = BingSearch::Client.open(account_key: ACCOUNT_KEY) do |c|
       assert c.open?
       c.web QUERY
     end

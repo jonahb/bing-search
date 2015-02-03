@@ -1,13 +1,11 @@
 require 'test_helper'
 
 class BingSearchTest < MiniTest::Test
-  include AccountKeySetup
-
   QUERY = 'cat'
 
   def setup
     super
-    BingSearch.account_key = account_key
+    BingSearch.account_key = ACCOUNT_KEY
   end
 
   %i(web image video news related spelling).each do |method|
