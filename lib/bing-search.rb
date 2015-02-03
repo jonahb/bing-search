@@ -28,7 +28,7 @@ module BingSearch
     # @see Client#web
     #
     def web(*args)
-      Client.new.web *args
+      Client.new.web(*args)
     end
 
     # Convenience method that creates a {Client} and searches for images. Takes
@@ -37,7 +37,7 @@ module BingSearch
     # @see Client#image
     #
     def image(*args)
-      Client.new.image *args
+      Client.new.image(*args)
     end
 
     # Convenience method that creates a {Client} and searches for videos. Takes
@@ -46,7 +46,7 @@ module BingSearch
     # @see Client#video
     #
     def video(*args)
-      Client.new.video *args
+      Client.new.video(*args)
     end
 
     # Convenience method that creates a {Client} and searches for news. Takes
@@ -55,7 +55,7 @@ module BingSearch
     # @see Client#news
     #
     def news(*args)
-      Client.new.news *args
+      Client.new.news(*args)
     end
 
     # Convenience method that creates a {Client} and searches for related
@@ -65,7 +65,7 @@ module BingSearch
     # @see Client#related_search
     #
     def related_search(*args)
-      Client.new.related_search *args
+      Client.new.related_search(*args)
     end
     alias_method :related, :related_search
 
@@ -76,7 +76,7 @@ module BingSearch
     # @see Client#spelling_suggestions
     #
     def spelling_suggestions(*args)
-      Client.new.spelling_suggestions *args
+      Client.new.spelling_suggestions(*args)
     end
     alias_method :spelling, :spelling_suggestions
 
@@ -87,7 +87,7 @@ module BingSearch
     # @see Client#composite
     #
     def composite(*args)
-      Client.new.composite *args
+      Client.new.composite(*args)
     end
   end
 end
