@@ -52,9 +52,9 @@ class ClientTest < MiniTest::Test
   end
 
   def test_class_open
-    client = BingSearch::Client.open(account_key: account_key) do |client|
-      assert client.open?
-      client.web QUERY
+    client = BingSearch::Client.open(account_key: account_key) do |c|
+      assert c.open?
+      c.web QUERY
     end
     refute client.open?
   end
