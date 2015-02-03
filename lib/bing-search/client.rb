@@ -29,6 +29,7 @@ module BingSearch
     #   {BingSearch.web_only} is assumed.
     #
     def initialize(account_key: nil, web_only: nil)
+      @session = nil
       @account_key = account_key || BingSearch.account_key
       @web_only = web_only.nil? ? BingSearch.web_only : web_only
 
