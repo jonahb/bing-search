@@ -2,8 +2,6 @@ require 'date'
 require 'json'
 require 'net/http'
 require 'uri'
-require 'active_support/core_ext/hash/slice'
-require 'active_support/core_ext/string/inflections'
 
 module BingSearch
   class Client
@@ -361,7 +359,7 @@ module BingSearch
       end
 
       params = params.
-        merge(opts.slice(*GENERAL_PASSTHROUGH_OPTS, *passthrough_opts)).
+        merge(Util.slice_hash(opts, *GENERAL_PASSTHROUGH_OPTS, *passthrough_opts)).
         merge(query: query, offset: offset, options: options, format: :JSON).
         delete_if { |_, v| v.nil? || (v.is_a?(Array) && v.empty?) }
 
@@ -421,7 +419,7 @@ module BingSearch
     #   The module does not contain a constant corresponing to the symbol
     #
     def enum_from_symbol(symbol, module_)
-      [symbol.to_s.camelcase, symbol.to_s.upcase].each do |const|
+      [Util.camelcase(symbol.to_s), symbol.to_s.upcase].each do |const|
         return module_.const_get(const) if module_.const_defined?(const)
       end
       raise ArgumentError, "#{module_} does not contain a constant corresponding to #{symbol}"
@@ -432,7 +430,7 @@ module BingSearch
     #
     def replace_param_names(params, replacements)
       params.each_with_object(Hash.new) do |(key, value), hash|
-        key = replacements[key] || GENERAL_PARAM_NAME_REPLACEMENTS[key] || key.to_s.camelcase
+        key = replacements[key] || GENERAL_PARAM_NAME_REPLACEMENTS[key] || Util.camelcase(key.to_s)
         hash[key] = value
       end
     end
@@ -513,7 +511,7 @@ module BingSearch
 
       for key, value in raw
         next if key == '__metadata'
-        attr = key.underscore.to_sym
+        attr = Util.underscore(key).to_sym
         model.set attr, parse(value, attr_to_type[attr])
       end
 

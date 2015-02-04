@@ -3,6 +3,7 @@
   client
   errors
   models
+  util
   version
 }.each do |file|
   require "bing-search/#{file}"
