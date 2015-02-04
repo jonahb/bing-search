@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.license               = 'MIT'
   spec.required_ruby_version = '>= 2.0'
   spec.require_paths         = ['lib']
-  spec.files                 = Dir['LICENSE.txt', 'README.md', 'lib/**/*']
+  spec.files                 = Dir['LICENSE.txt', 'README.md', '.yardopts', 'lib/**/*']
 
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'rake', '~> 10.0'
