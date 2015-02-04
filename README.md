@@ -3,6 +3,7 @@
 A Ruby client for the [Bing Search API](http://datamarket.azure.com/dataset/bing/search).
 
 [![Gem Version](https://badge.fury.io/rb/bing-search.svg)](http://badge.fury.io/rb/bing-search)
+[![Build Status](https://travis-ci.org/jonahb/bing-search.svg?branch=master)](https://travis-ci.org/jonahb/bing-search)
 
 ## Getting Started
 
