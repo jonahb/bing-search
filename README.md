@@ -102,7 +102,7 @@ To retrieve multiple result types at once, use {BingSearch.composite}:
 result = BingSearch.composite('Majorana', [:web, :image, :news])
 ```
 
-The result is a {BingSearch::CompositeResult} ...
+The result is a {BingSearch::CompositeSearchResult} ...
 
 ```ruby
 result.class # => BingSearch::CompositeResult
