@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ClientTest < Minitest::Test
+class ClientTest < MiniTest::Unit::TestCase
   QUERY = 'cat'
 
   attr_reader :client
