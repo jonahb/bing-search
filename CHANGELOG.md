@@ -2,7 +2,7 @@
 
 bing-search adheres to [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 2.0.0 - 2015-02-14
 
 ### Changed
 - `BingSearch.access_key` is now `BingSearch.account_key`
