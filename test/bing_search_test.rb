@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BingSearchTest < MiniTest::Unit::TestCase
+class BingSearchTest < Test
   QUERY = 'cat'
 
   def setup
